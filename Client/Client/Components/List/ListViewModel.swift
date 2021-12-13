@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct ListViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class ListViewModel : ObservableObject {
+    
+    @Published var itemDataModel: ItemDataModel
+    init(itemDataModel: ItemDataModel) {
+        self.itemDataModel = itemDataModel
     }
-}
+    
+    }
+    
 
-struct ListViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        ListViewModel()
-    }
-}
+
