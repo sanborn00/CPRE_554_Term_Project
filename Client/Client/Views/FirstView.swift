@@ -11,13 +11,14 @@ import SwiftUI
 struct FirstView: View {
     
     @StateObject var pageBuilder = PageBuilder()
-
+    
     
     var body: some View {
         view
-        .onAppear {
-            pageBuilder.decodePageData()
-        }
+            .onAppear {
+                pageBuilder.decodePageData()
+            }
+            
     }
     
     @ViewBuilder

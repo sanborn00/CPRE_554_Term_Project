@@ -12,27 +12,23 @@ import SwiftUI
 @available(iOS 15.0, *)
 class PageBuilder: ObservableObject {
     
-    @Published var pageComponents: [ComponentDataMode]
+    @Published private(set) var pageComponents: [ComponentDataMode] = []
     
-    var itemDataModel: ItemDataModel?
-    
-    init(){
+    private(set) var pageData: PageDataModel = PageDataModel()
         
-        self.pageComponents = [.init(variant: .tabNav, data: "n/a")]
-    }
     
     func decodePageData() {
         
         if let url = URL(string: "https://sdui-demo-cs554.herokuapp.com/LayoutTest01") {
             _ = Task {
                 do {
-                    let pageData: PageDataModel = try await fetch(url: url)
+                    self.pageData = try await fetch(url: url)
                     DispatchQueue.main.async {
-                        self.pageComponents = pageData.components
+                        self.pageComponents = self.pageData.components
                     }
-                    print("data: \(pageData.pageID)")
-                    print("data: \(pageData.components)")
-                    print("data: \(pageData.description)")
+                    print("page id: \(pageData.pageID)")
+                    print("components data: \(pageData.components)")
+                    print("description: \(pageData.description)")
                     
                     
                     
@@ -48,36 +44,73 @@ class PageBuilder: ObservableObject {
         switch variant {
             
         case .button:
-            return AnyView(Button("a button"){})
+            
+            let itemDataModels: [ItemDataModel] = decodeItemDataModel(variant: .button)
+            
+            
+            return AnyView (
+                ForEach (itemDataModels, id: \.self ) { itemDataModel in
+                    ButtonView(viewModel: ButtonViewModel(itemDataModel: itemDataModel))
+                }
+            )
             
         case .list:
-            return AnyView(VStack {
+            
+            let itemDataModels: [ItemDataModel] = decodeItemDataModel(variant: .list)
+
+            
+            return AnyView(List {
                 Text("item a")
                 Text("item b")
                 Text("item c")
-            })
+            }.frame(width: UIScreen.main.bounds.size.width - 20, height: 100))
             
         case .tabNav:
-           return AnyView(Text("3"))
+            return AnyView(Text("3"))
             
         case .textField:
-           return AnyView(Text("Enter your name"))
+            
+            return AnyView(Text("Enter your name"))
             
         case .label:
-
-            let labelViewModel = LabelViewModel(itemDataModel: itemDataModel!)
             
-            return AnyView(LabelView(viewModel: labelViewModel))
+            let itemDataModels: [ItemDataModel] = decodeItemDataModel(variant: .label)
+                        
+            return AnyView (
+                ForEach (itemDataModels, id: \.self ) { itemDataModel in
+                    LabelView(viewModel: LabelViewModel(itemDataModel: itemDataModel))
+                }
+            )
             
+        case .icon:
+            
+            let itemDataModels: [ItemDataModel] = decodeItemDataModel(variant: .icon)
+            
+            return AnyView (
+                ForEach (itemDataModels, id: \.self ) { itemDataModel in
+                    IconView(viewModel: IconViewModel(itemDataModel: itemDataModel))
+                }
+            )
+        }
+    }
+    
+    
+    private func decodeItemDataModel(variant: Variant) -> [ItemDataModel] {
+        
+        var itemDataModels: [ItemDataModel] = []
+        
+        let components = pageData.components.filter{
+            $0.variant == variant
         }
         
+        pageData.components.removeAll {
+            $0.variant == variant
+        }
+        
+        for (index, _) in components.enumerated() {
+            itemDataModels.append(components[index].itemDataModel)
+        }
+        
+        return itemDataModels
     }
-        
-        
-    
-    
-    
 }
-    
-    
-
