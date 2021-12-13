@@ -8,17 +8,22 @@
 import Foundation
 import SwiftUI
 
-class ItemDataModel: Decodable, ObservableObject {
+
+enum ActionVariant: String, Decodable {
+    case action1
+    case action2
+    case action3
+}
+
+struct ItemDataModel: Decodable, Hashable {
     
-    
-    
-    var text: String?
-    var color: String?
-    var itemName: String?
-    var imageURL: String?
-    var iconKey: String?
-    var action: String?
-    var payload: [String]?
+    private(set) var text: String?
+    private(set) var color: String?
+    private(set) var itemName: String?
+    private(set) var imageURL: String?
+    private(set) var iconKey: String?
+    private(set) var action: String?
+    private(set) var payload: [String]?
     
     
     internal init(text: String? = nil, color: String? = nil, itemName: String? = nil, imageURL: String? = nil, iconKey: String? = nil, action: String? = nil, payload: [String]? = nil) {
@@ -31,5 +36,12 @@ class ItemDataModel: Decodable, ObservableObject {
         self.payload = payload
     }
     
+    static func == (lhs: ItemDataModel, rhs: ItemDataModel) -> Bool {
+        lhs.text == rhs.text
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(text)
+    }
     
 }
