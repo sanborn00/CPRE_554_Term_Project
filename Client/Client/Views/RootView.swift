@@ -9,13 +9,25 @@ import SwiftUI
 
 @available(iOS 15.0, *)
 struct RootView: View {
+    
+    @StateObject var viewModel = RootViewModel()
         
     var body: some View {
         
+        
+        
+        
         TabView {
             FirstView()
+                .environmentObject(viewModel.pageBuilder)
                 .tabItem{
                     Label("First View", systemImage: "1.square")
+                }
+                .onAppear{
+                    viewModel.startTimer()
+                }
+                .onDisappear{
+                    viewModel.stopTimer()
                 }
                 
             

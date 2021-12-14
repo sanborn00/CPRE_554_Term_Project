@@ -17,6 +17,7 @@ enum ActionVariant: String, Decodable {
 
 struct ItemDataModel: Decodable, Hashable {
     
+    private(set) var id: String?
     private(set) var text: String?
     private(set) var color: String?
     private(set) var itemName: String?
@@ -26,7 +27,8 @@ struct ItemDataModel: Decodable, Hashable {
     private(set) var payload: [String]?
     
     
-    internal init(text: String? = nil, color: String? = nil, itemName: String? = nil, imageURL: String? = nil, iconKey: String? = nil, action: String? = nil, payload: [String]? = nil) {
+    internal init(id: String? = nil, text: String? = nil, color: String? = nil, itemName: String? = nil, imageURL: String? = nil, iconKey: String? = nil, action: String? = nil, payload: [String]? = nil) {
+        self.id = id
         self.text = text
         self.color = color
         self.itemName = itemName
@@ -37,11 +39,11 @@ struct ItemDataModel: Decodable, Hashable {
     }
     
     static func == (lhs: ItemDataModel, rhs: ItemDataModel) -> Bool {
-        lhs.text == rhs.text
+        lhs.id == rhs.id
     }
     
     func hash(into hasher: inout Hasher) {
-        hasher.combine(text)
+        hasher.combine(id)
     }
     
 }

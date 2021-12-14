@@ -12,9 +12,14 @@ import SwiftUI
 @available(iOS 15.0, *)
 class PageBuilder: ObservableObject {
     
-    @Published private(set) var pageComponents: [ComponentDataMode] = []
+    @Published var pageComponents: [ComponentDataMode]
     
-    private(set) var pageData: PageDataModel = PageDataModel()
+    var pageData: PageDataModel = PageDataModel()
+    
+    init(){
+        pageComponents = []
+        decodePageData()
+    }
         
     
     func decodePageData() {
@@ -92,6 +97,16 @@ class PageBuilder: ObservableObject {
                 }
             )
         }
+    }
+    
+    @ViewBuilder
+    func refresh(pageComponents:[ComponentDataMode]) -> some View {
+            VStack{
+                ForEach(pageComponents, id: \.self) { component in
+                    self.buildComponent(variant: component.variant)
+                }
+            }
+        
     }
     
     

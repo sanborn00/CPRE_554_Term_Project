@@ -10,20 +10,23 @@ import SwiftUI
 @available(iOS 15.0, *)
 struct FirstView: View {
     
-    @StateObject var pageBuilder = PageBuilder()
+    @EnvironmentObject var pageBuilder: PageBuilder
     
     
     var body: some View {
         view
-            .onAppear {
-                pageBuilder.decodePageData()
-            }
+            
+        
+//            .onAppear {
+//                pageBuilder.decodePageData()
+//            }
+            
             
     }
     
     @ViewBuilder
     var view: some View {
-        VStack{
+        ScrollView{
             ForEach(pageBuilder.pageComponents, id: \.self) { component in
                 pageBuilder.buildComponent(variant: component.variant)
             }

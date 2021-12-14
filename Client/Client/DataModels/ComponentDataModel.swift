@@ -18,7 +18,7 @@ enum Variant: String, Decodable {
 
 struct ComponentDataMode: Decodable, Hashable {
     
-    let id: String
+    var id: String
     let variant: Variant
     let expiry: String
     let itemDataModel: ItemDataModel
