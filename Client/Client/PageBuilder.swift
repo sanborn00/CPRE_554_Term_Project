@@ -64,11 +64,10 @@ class PageBuilder: ObservableObject {
             let itemDataModels: [ItemDataModel] = decodeItemDataModel(variant: .list)
 
             
-            return AnyView(List {
-                Text("item a")
-                Text("item b")
-                Text("item c")
-            }.frame(width: UIScreen.main.bounds.size.width - 20, height: 100))
+            return AnyView(
+                ForEach (itemDataModels, id: \.self ) { itemDataModel in
+                    ListView(viewModel: ListViewModel(itemDataModel: itemDataModel))
+            })
             
         case .tabNav:
             return AnyView(Text("3"))

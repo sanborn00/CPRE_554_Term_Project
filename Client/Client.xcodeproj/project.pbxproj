@@ -25,6 +25,8 @@
 		09F35D8F26FA51AB00966B20 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09F35D8E26FA51AB00966B20 /* RootView.swift */; };
 		09F35D9126FA51AC00966B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09F35D9026FA51AC00966B20 /* Assets.xcassets */; };
 		09F35D9426FA51AC00966B20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09F35D9326FA51AC00966B20 /* Preview Assets.xcassets */; };
+		7904D2EF2766FE4C0053DF32 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904D2EE2766FE4C0053DF32 /* ListViewModel.swift */; };
+		79F890002766F9D9007EED0E /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F88FFF2766F9D8007EED0E /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +49,8 @@
 		09F35D8E26FA51AB00966B20 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		09F35D9026FA51AC00966B20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09F35D9326FA51AC00966B20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7904D2EE2766FE4C0053DF32 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		79F88FFF2766F9D8007EED0E /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 		09A057FD274C96EB00A6B757 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				79F88FFC2766F306007EED0E /* List */,
 				09788D162766E9A600B65611 /* Icon */,
 				09788D1027653F3800B65611 /* Button */,
 				09A05800274C973200A6B757 /* Label */,
@@ -155,6 +160,22 @@
 				09F35D9326FA51AC00966B20 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		79F88FF72766C48F007EED0E /* Button */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		79F88FFC2766F306007EED0E /* List */ = {
+			isa = PBXGroup;
+			children = (
+				79F88FFF2766F9D8007EED0E /* ListView.swift */,
+				7904D2EE2766FE4C0053DF32 /* ListViewModel.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,11 +254,13 @@
 				09788D132765418700B65611 /* FirstView.swift in Sources */,
 				09134BF027437408001DE64F /* PageDataMode.swift in Sources */,
 				09F35D8F26FA51AB00966B20 /* RootView.swift in Sources */,
+				7904D2EF2766FE4C0053DF32 /* ListViewModel.swift in Sources */,
 				09A057FA274B836500A6B757 /* PageBuilder.swift in Sources */,
 				09788D1E2766F60A00B65611 /* ButtonViewModel.swift in Sources */,
 				09788D1527654B8000B65611 /* SecondView.swift in Sources */,
 				09134BF2274374A4001DE64F /* ComponentDataModel.swift in Sources */,
 				09A057FC274C942F00A6B757 /* ItemDataModel.swift in Sources */,
+				79F890002766F9D9007EED0E /* ListView.swift in Sources */,
 				09A05802274C974B00A6B757 /* LabelViewModel.swift in Sources */,
 				09788D1A2766EA2A00B65611 /* IconViewModel.swift in Sources */,
 				09A057FF274C972400A6B757 /* LabelView.swift in Sources */,
