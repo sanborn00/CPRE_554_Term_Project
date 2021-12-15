@@ -16,7 +16,6 @@ struct FirstView: View {
         
     var body: some View {
         pageBuilder.view
-
     }
 }
 

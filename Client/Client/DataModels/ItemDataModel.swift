@@ -27,7 +27,14 @@ struct ItemDataModel: Decodable, Hashable {
     private(set) var payload: [String]?
     
     
-    internal init(id: String? = nil, text: String? = nil, color: String? = nil, itemName: String? = nil, imageURL: String? = nil, iconKey: String? = nil, action: String? = nil, payload: [String]? = nil) {
+    internal init(id: String? = nil,
+                  text: String? = nil,
+                  color: String? = nil,
+                  itemName: String? = nil,
+                  imageURL: String? = nil,
+                  iconKey: String? = nil,
+                  action: String? = nil,
+                  payload: [String]? = nil) {
         self.id = id
         self.text = text
         self.color = color
