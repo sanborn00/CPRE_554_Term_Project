@@ -159,13 +159,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		79F88FF72766C48F007EED0E /* Button */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Button;
-			sourceTree = "<group>";
-		};
 		79F88FFC2766F306007EED0E /* List */ = {
 			isa = PBXGroup;
 			children = (

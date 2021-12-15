@@ -6,28 +6,17 @@
 //
 
 import SwiftUI
+import Combine
+
 
 @available(iOS 15.0, *)
 struct FirstView: View {
     
-    @StateObject var pageBuilder = PageBuilder()
-    
-    
+    @StateObject var pageBuilder: PageBuilder = PageBuilder()
+        
     var body: some View {
-        view
-            .onAppear {
-                pageBuilder.decodePageData()
-            }
-            
-    }
-    
-    @ViewBuilder
-    var view: some View {
-        VStack{
-            ForEach(pageBuilder.pageComponents, id: \.self) { component in
-                pageBuilder.buildComponent(variant: component.variant)
-            }
-        }
+        pageBuilder.view
+
     }
 }
 

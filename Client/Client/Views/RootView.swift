@@ -9,7 +9,7 @@ import SwiftUI
 
 @available(iOS 15.0, *)
 struct RootView: View {
-        
+    
     var body: some View {
         
         TabView {
@@ -18,7 +18,6 @@ struct RootView: View {
                     Label("First View", systemImage: "1.square")
                 }
                 
-            
             SecondView()
                 .tabItem{
                     Label("Second View", systemImage: "2.square")
