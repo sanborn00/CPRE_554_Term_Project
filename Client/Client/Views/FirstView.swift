@@ -6,31 +6,17 @@
 //
 
 import SwiftUI
+import Combine
+
 
 @available(iOS 15.0, *)
 struct FirstView: View {
     
-    @EnvironmentObject var pageBuilder: PageBuilder
-    
-    
-    var body: some View {
-        view
-            
+    @StateObject var pageBuilder: PageBuilder = PageBuilder()
         
-//            .onAppear {
-//                pageBuilder.decodePageData()
-//            }
-            
-            
-    }
-    
-    @ViewBuilder
-    var view: some View {
-        ScrollView{
-            ForEach(pageBuilder.pageComponents, id: \.self) { component in
-                pageBuilder.buildComponent(variant: component.variant)
-            }
-        }
+    var body: some View {
+        pageBuilder.view
+
     }
 }
 
