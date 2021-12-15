@@ -14,6 +14,7 @@ enum Variant: String, Decodable {
     case textField // 4
     case label // 5
     case icon // 6
+    case picker//7
 }
 
 struct ComponentDataMode: Decodable, Hashable {
