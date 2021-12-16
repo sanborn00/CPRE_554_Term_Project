@@ -9,12 +9,14 @@ import SwiftUI
 
 struct PickerView: View {
     @ObservedObject var viewModel:PickerViewModel
+    @State private var selectedPayloadIndex = 0
+
 
     init(viewModel: PickerViewModel){
         self.viewModel=viewModel
     }
     var body: some View {
-        viewModel.style()
+        viewModel.style(selection: $selectedPayloadIndex)
             }
         }
 

@@ -23,12 +23,12 @@ class   PickerViewModel : ObservableObject {
 
 
     @ViewBuilder
-    func style() -> some View{
+    func style(selection: Binding<Int>) -> some View{
         switch itemDataModel.itemName{
         case "Style1":
             VStack {
                 Text(itemDataModel.text ?? "")
-                        Picker("payload selection", selection: $selectedPayload) {
+                        Picker("payload selection", selection: selection) {
                             ForEach(payload, id: \.self) {
                                 Text($0)
                                     .foregroundColor(Color(self.itemDataModel.color ?? "black"))
@@ -40,7 +40,7 @@ class   PickerViewModel : ObservableObject {
      case "Style2":
         VStack {
             Text(itemDataModel.text ?? "")
-                    Picker("payload selection", selection: $selectedPayload) {
+                    Picker("payload selection", selection: selection) {
                         ForEach(payload, id: \.self) {
                             Text($0)
                                 .foregroundColor(Color(self.itemDataModel.color ?? "black"))
@@ -51,7 +51,7 @@ class   PickerViewModel : ObservableObject {
         case "Style3":
             VStack {
                 Text(itemDataModel.text ?? "")
-                Picker( selection: $selectedPayloadIndex, label: Text("")) {
+                Picker( selection: selection, label: Text("")) {
                     ForEach(0 ..< payload.count, id: \.self) {item in
                         Text(self.payload[item]).tag(item)
                             }
@@ -62,7 +62,7 @@ class   PickerViewModel : ObservableObject {
         default:
             VStack {
                 Text(itemDataModel.text ?? "")
-                        Picker("payload selection", selection: $selectedPayload) {
+                        Picker("payload selection", selection: selection) {
                             ForEach(payload, id: \.self) {
                                 Text($0)
                             }.foregroundColor(Color(self.itemDataModel.color ?? "black"))
