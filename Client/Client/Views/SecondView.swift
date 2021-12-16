@@ -20,6 +20,10 @@ struct SecondView: View {
                 .foregroundColor(.red)
             Text("this is another label")
                 .foregroundColor(.green)
+            Text("this is a label")
+                .foregroundColor(.red)
+            Text("this is another label")
+                .foregroundColor(.green)
             Button {
                 count = count + 1
                 print("after: \(self.count)")
