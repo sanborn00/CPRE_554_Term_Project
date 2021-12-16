@@ -11,7 +11,7 @@ struct PageDataModel: Decodable, CustomStringConvertible {
     
     let pageID: String
     let expiry: String
-    var components: [ComponentDataMode]
+    let components: [ComponentDataMode]
     
     init() {
         pageID = "0"
