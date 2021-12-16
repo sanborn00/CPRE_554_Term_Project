@@ -102,7 +102,7 @@ class PageBuilder: ObservableObject {
                 }.frame(width: UIScreen.main.bounds.size.width, height: 100))
             
         case .picker:
-            let itemDataModels: [ItemDataModel] = decodeItemDataModel(variant: .picker)
+            let itemDataModels: [ItemDataModel] = decodeItemDataModel(componentID: componentID, variant: .picker)
 
             
             return AnyView(
