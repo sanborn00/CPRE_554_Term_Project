@@ -9,13 +9,58 @@ import SwiftUI
 
 @available(iOS 15.0, *)
 struct SecondView: View {
+    @State private var count=0
+    var selection = ["a", "b", "c"]
+    @State private var selecteditem = "a"
     
-    @StateObject var pageBuilder: PageBuilder = PageBuilder()
-
     var body: some View {
-        Text("Hello, World!")
+        
+        ScrollView{
+            Text("this is a label")
+                .foregroundColor(.red)
+            Text("this is another label")
+                .foregroundColor(.green)
+            Button {
+                count = count + 1
+                print("after: \(self.count)")
+            } label: {
+                Text("tap me \(self.count)")
+                
+            }
+            .foregroundColor(.blue)
+            Button {
+                count = count + 1
+                print("after: \(self.count)")
+            } label: {
+                Text("tap me \(self.count)")
+            }
+            .foregroundColor(.green)
+
+            List {
+                Text("item1")
+                Text("item2")
+            }
+            .foregroundColor(.black)
+
+            
+            Text("Select Item")
+            Picker( selection: $selecteditem, label: Text("")) {
+                ForEach(selection, id: \.self) {
+                    Text($0)
+                }
+            }
+            .foregroundColor(.black)
+            .pickerStyle(SegmentedPickerStyle())
+            
+            Image(systemName: "sunrise.fill")
+                .foregroundColor(.black)
+
+        }
+        
     }
 }
+
+
 
 @available(iOS 15.0, *)
 struct SecondView_Previews: PreviewProvider {
