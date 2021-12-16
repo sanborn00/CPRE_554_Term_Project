@@ -40,6 +40,8 @@ struct SecondView: View {
                 Text("item1")
                 Text("item2")
             }
+            .frame(width: UIScreen.main.bounds.size.width, height: 100)
+            
             .foregroundColor(.black)
 
             
