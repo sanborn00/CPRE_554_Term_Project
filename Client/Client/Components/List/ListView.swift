@@ -23,6 +23,7 @@ struct ListView: View {
         List{
             ForEach(payload, id: \.self){ item in
                 Text(item)
+                    .foregroundColor(Color(viewModel.itemDataModel.color ?? "black"))
             }
             
         }
@@ -31,9 +32,6 @@ struct ListView: View {
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        let payload = ["a","b","c"]
-        let itemDataModel = ItemDataModel(payload:payload)
-        let listViewModel = ListViewModel(itemDataModel: itemDataModel)
-        ListView(viewModel: listViewModel)
+        ListView(viewModel: ListViewModel(itemDataModel: ItemDataModel(color: "red", payload:["a","b","c"])))
     }
 }

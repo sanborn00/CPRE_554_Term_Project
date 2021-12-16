@@ -22,6 +22,10 @@ struct LabelView: View {
             .foregroundColor(Color(viewModel.itemDataModel.color ?? "black"))
             
     }
-
+    struct LabelView_Previews: PreviewProvider {
+        static var previews: some View {
+    LabelView(viewModel: LabelViewModel(itemDataModel: ItemDataModel(text:"This is label", color: "blue")))
 }
 
+    }
+}

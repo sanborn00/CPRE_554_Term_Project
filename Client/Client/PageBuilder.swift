@@ -101,6 +101,15 @@ class PageBuilder: ObservableObject {
                     ListView(viewModel: ListViewModel(itemDataModel: itemDataModel))
                 }.frame(width: UIScreen.main.bounds.size.width, height: 100))
             
+        case .picker:
+            let itemDataModels: [ItemDataModel] = decodeItemDataModel(variant: .picker)
+
+            
+            return AnyView(
+                ForEach (itemDataModels, id: \.self ) { itemDataModel in
+                    PickerView(viewModel: PickerViewModel(itemDataModel: itemDataModel))
+            })
+            
         case .tabNav:
             return AnyView(Text("3"))
             

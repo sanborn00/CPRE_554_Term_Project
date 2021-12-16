@@ -25,6 +25,10 @@
 		09F35D9126FA51AC00966B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09F35D9026FA51AC00966B20 /* Assets.xcassets */; };
 		09F35D9426FA51AC00966B20 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09F35D9326FA51AC00966B20 /* Preview Assets.xcassets */; };
 		7904D2EF2766FE4C0053DF32 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904D2EE2766FE4C0053DF32 /* ListViewModel.swift */; };
+		7904D2F52768435D0053DF32 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904D2F42768435D0053DF32 /* PickerView.swift */; };
+		7904D2F7276843740053DF32 /* PickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904D2F6276843740053DF32 /* PickerViewModel.swift */; };
+		7904D2FE276870820053DF32 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904D2FD276870820053DF32 /* PageView.swift */; };
+		7904D300276870900053DF32 /* PageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7904D2FF276870900053DF32 /* PageViewModel.swift */; };
 		79F890002766F9D9007EED0E /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F88FFF2766F9D8007EED0E /* ListView.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +52,10 @@
 		09F35D9026FA51AC00966B20 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09F35D9326FA51AC00966B20 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7904D2EE2766FE4C0053DF32 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		7904D2F42768435D0053DF32 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		7904D2F6276843740053DF32 /* PickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewModel.swift; sourceTree = "<group>"; };
+		7904D2FD276870820053DF32 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		7904D2FF276870900053DF32 /* PageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewModel.swift; sourceTree = "<group>"; };
 		79F88FFF2766F9D8007EED0E /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +111,8 @@
 		09A057FD274C96EB00A6B757 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7904D2FC276870660053DF32 /* Page */,
+				7904D2F32768433E0053DF32 /* Picker */,
 				79F88FFC2766F306007EED0E /* List */,
 				09788D162766E9A600B65611 /* Icon */,
 				09788D1027653F3800B65611 /* Button */,
@@ -159,6 +169,26 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+
+		7904D2F32768433E0053DF32 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				7904D2F42768435D0053DF32 /* PickerView.swift */,
+				7904D2F6276843740053DF32 /* PickerViewModel.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		7904D2FC276870660053DF32 /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				7904D2FD276870820053DF32 /* PageView.swift */,
+				7904D2FF276870900053DF32 /* PageViewModel.swift */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+
 		79F88FFC2766F306007EED0E /* List */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,11 +270,15 @@
 			files = (
 				093DD25F272BB44500B9C01F /* NetworkManager.swift in Sources */,
 				09788D182766EA1C00B65611 /* IconView.swift in Sources */,
+				7904D2F52768435D0053DF32 /* PickerView.swift in Sources */,
+				7904D2F7276843740053DF32 /* PickerViewModel.swift in Sources */,
 				09788D202766F61500B65611 /* ButtonView.swift in Sources */,
+				7904D2FE276870820053DF32 /* PageView.swift in Sources */,
 				09788D132765418700B65611 /* FirstView.swift in Sources */,
 				09134BF027437408001DE64F /* PageDataMode.swift in Sources */,
 				09F35D8F26FA51AB00966B20 /* RootView.swift in Sources */,
 				7904D2EF2766FE4C0053DF32 /* ListViewModel.swift in Sources */,
+				7904D300276870900053DF32 /* PageViewModel.swift in Sources */,
 				09A057FA274B836500A6B757 /* PageBuilder.swift in Sources */,
 				09788D1E2766F60A00B65611 /* ButtonViewModel.swift in Sources */,
 				09788D1527654B8000B65611 /* SecondView.swift in Sources */,
